@@ -10,10 +10,10 @@ import com.alexandre.mainionic.repositories.CategoryRepository;
 
 @Service
 public class CategoryService {
-	
+
 	@Autowired
 	private CategoryRepository repo;
-	
+
 	public Category searchById(Integer id) {
 		Optional<Category> obj = repo.findById(id);
 		return obj.orElse(null);
