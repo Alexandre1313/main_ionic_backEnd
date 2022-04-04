@@ -5,12 +5,17 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alexandre.mainionic.domain.Address;
 import com.alexandre.mainionic.domain.Category;
 import com.alexandre.mainionic.domain.City;
+import com.alexandre.mainionic.domain.Client;
 import com.alexandre.mainionic.domain.Product;
 import com.alexandre.mainionic.domain.State;
+import com.alexandre.mainionic.domain.enums.ClientType;
+import com.alexandre.mainionic.repositories.AddressRepository;
 import com.alexandre.mainionic.repositories.CategoryRepository;
 import com.alexandre.mainionic.repositories.CityRepository;
+import com.alexandre.mainionic.repositories.ClientRepository;
 import com.alexandre.mainionic.repositories.ProductRepository;
 import com.alexandre.mainionic.repositories.StateRepository;
 
@@ -28,6 +33,12 @@ public class DBService {
 	
 	@Autowired
 	private CityRepository cyrep;
+	
+	@Autowired
+	private AddressRepository adrep;
+	
+	@Autowired
+	private ClientRepository clirep;
 	
 	public void instantiateDB() {
 		
@@ -213,6 +224,21 @@ public class DBService {
 	    cyrep.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8, c9, 
 	    		c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, 
 	    		c22, c23, c24, c25, c26, c27, c28, c29, c30));
+	    
+	    Client cli1 = new Client(null, "Alexandre Cordeiro", 
+	    		"alexandre.13a@gmail.com", "000.612.689.84", ClientType.PESSOAFISICA);
+	    cli1.getPhones().addAll(Arrays.asList("(47)99728-5083", "(49)3323-5083"));
+	    
+	    Address ad1 = new Address(null, "Rua Macaé", "43", "Apto 4", "Fortaleza", 
+	    		"89056-015", cli1, c1);
+	    
+	    Address ad2 = new Address(null, "Rua Prudentópolis", "4389", "Apto 40", 
+	    		"Carijós", "89025-011", cli1, c3);
+	    
+	    cli1.getAddresses().addAll(Arrays.asList(ad1, ad2));
+	    
+	    clirep.saveAll(Arrays.asList(cli1));
+	    adrep.saveAll(Arrays.asList(ad1, ad2));
 	    
 	}
 } 
