@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import com.alexandre.mainionic.services.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
-public class ResourceExceptionHendler {
+public class ResourceExceptionHandler {
 	
 	@ExceptionHandler(ObjectNotFoundException.class)
 	public ResponseEntity<StandardError> objectNotFound(
