@@ -3,12 +3,15 @@ package com.alexandre.mainionic.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Address implements Serializable {
@@ -18,12 +21,22 @@ public class Address implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	@Column(length=70)
 	private String patio;
+	
+	@Column(length=15)
 	private String number;
+	
+	@Column(length=70)
 	private String complement;
+	
+	@Column(length=40)
 	private String district;
+	
+	@Column(length=9)
 	private String cep;
 	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	private Client client;

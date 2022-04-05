@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.alexandre.mainionic.domain.enums.ClientType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Client implements Serializable {
@@ -25,17 +27,27 @@ public class Client implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	@Column(length=70)
 	private String name;
+	
+	@Column(length=50)
 	private String email;
+	
+	@Column(length=20)
 	private String cpfCnpj;
+	
 	private Integer type;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="client")
 	private List<Address> addresses = new ArrayList<>();
 	
 	@ElementCollection
 	@CollectionTable(name="phone")
 	private Set<String> phones = new HashSet<>();
+	
+	@OneToMany(mappedBy="client")
+	private List<Request> requests = new ArrayList<>();
 	
 	public Client() {}
 
@@ -103,6 +115,14 @@ public class Client implements Serializable {
 
 	public void setPhones(Set<String> phones) {
 		this.phones = phones;
+	}
+	
+	public List<Request> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(List<Request> requests) {
+		this.requests = requests;
 	}
 
 	@Override

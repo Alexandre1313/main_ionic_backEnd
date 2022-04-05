@@ -1,22 +1,32 @@
 package com.alexandre.mainionic.services;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alexandre.mainionic.domain.Address;
+import com.alexandre.mainionic.domain.CardPayment;
 import com.alexandre.mainionic.domain.Category;
 import com.alexandre.mainionic.domain.City;
 import com.alexandre.mainionic.domain.Client;
+import com.alexandre.mainionic.domain.Payment;
+import com.alexandre.mainionic.domain.PaymentWithTicket;
 import com.alexandre.mainionic.domain.Product;
+import com.alexandre.mainionic.domain.Request;
 import com.alexandre.mainionic.domain.State;
 import com.alexandre.mainionic.domain.enums.ClientType;
+import com.alexandre.mainionic.domain.enums.PaymentStatus;
 import com.alexandre.mainionic.repositories.AddressRepository;
 import com.alexandre.mainionic.repositories.CategoryRepository;
 import com.alexandre.mainionic.repositories.CityRepository;
 import com.alexandre.mainionic.repositories.ClientRepository;
+import com.alexandre.mainionic.repositories.PaymentRepository;
 import com.alexandre.mainionic.repositories.ProductRepository;
+import com.alexandre.mainionic.repositories.RequestRepository;
 import com.alexandre.mainionic.repositories.StateRepository;
 
 @Service
@@ -40,7 +50,13 @@ public class DBService {
 	@Autowired
 	private ClientRepository clirep;
 	
-	public void instantiateDB() {
+	@Autowired
+	private RequestRepository reqrep;
+	
+	@Autowired
+	private PaymentRepository pyrep;
+	
+	public void instantiateDB() throws ParseException {
 		
 		//States
 		
@@ -239,6 +255,23 @@ public class DBService {
 	    
 	    clirep.saveAll(Arrays.asList(cli1));
 	    adrep.saveAll(Arrays.asList(ad1, ad2));
+	    
+	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	    
+	    Request req1 = new Request(null, sdf.parse("30/09/2017 10:32"), cli1, ad1);
+	    Request req2 = new Request(null, sdf.parse("10/10/2017 19:35"), cli1, ad2);
+	    
+	    Payment pg1 = new CardPayment(null, PaymentStatus.QUITADO, req1, 7);
+	    req1.setPayment(pg1);
+	    
+	    Payment pg2 = new PaymentWithTicket(null, PaymentStatus.PENDENTE, req2, 
+	    		sdf.parse("20/10/2017 00:00"), null);
+	    req2.setPayment(pg2);
+	    
+	    cli1.getRequests().addAll(Arrays.asList(req1, req2));
+	    
+	    reqrep.saveAll(Arrays.asList(req1, req2));
+	    pyrep.saveAll(Arrays.asList(pg1, pg2));
 	    
 	}
 } 
