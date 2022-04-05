@@ -2,7 +2,9 @@ package com.alexandre.mainionic.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -33,6 +35,8 @@ public class Request implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="delivery_address_id")
 	private Address deliveryAddress;
+	
+	private Set<OrderItems> items = new HashSet<>();
 	
 	public Request() {}
 

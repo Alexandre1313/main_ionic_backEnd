@@ -2,8 +2,10 @@ package com.alexandre.mainionic.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,6 +39,8 @@ public class Product implements Serializable {
 	joinColumns= @JoinColumn(name="product_id"), 
 	inverseJoinColumns= @JoinColumn(name="category_id"))
 	private List<Category> categories = new ArrayList<>();
+	
+	private Set<OrderItems> items = new HashSet<>();
 	
 	public Product() {}
 	
