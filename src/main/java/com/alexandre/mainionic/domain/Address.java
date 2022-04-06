@@ -22,7 +22,7 @@ public class Address implements Serializable {
 	private Integer id;
 	
 	@Column(length=70)
-	private String patio;
+	private String street;
 	
 	@Column(length=15)
 	private String number;
@@ -47,12 +47,12 @@ public class Address implements Serializable {
 	
 	public Address() {}
 
-	public Address(Integer id, String patio, String number, 
+	public Address(Integer id, String street, String number, 
 			String complement, String district, String cep,
 			Client client, City city) {
 		super();
 		this.id = id;
-		this.patio = patio;
+		this.street = street;
 		this.number = number;
 		this.complement = complement;
 		this.district = district;
@@ -69,12 +69,12 @@ public class Address implements Serializable {
 		this.id = id;
 	}
 
-	public String getPatio() {
-		return patio;
+	public String getStreet() {
+		return street;
 	}
 
-	public void setPatio(String patio) {
-		this.patio = patio;
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
 	public String getNumber() {

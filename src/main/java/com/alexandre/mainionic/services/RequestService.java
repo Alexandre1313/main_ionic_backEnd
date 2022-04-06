@@ -16,7 +16,7 @@ public class RequestService {
 	@Autowired
 	private RequestRepository repo;
 
-	public Request searchById(Integer id) {
+	public Request findById(Integer id) {
 		Optional<Request> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto de ID " + id + " não encontrado" + ", tipo: " + 
