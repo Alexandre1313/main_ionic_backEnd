@@ -12,12 +12,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import javax.persistence.JoinColumn;
 
 @Entity
 public class Product implements Serializable {
@@ -40,6 +40,7 @@ public class Product implements Serializable {
 	inverseJoinColumns= @JoinColumn(name="category_id"))
 	private List<Category> categories = new ArrayList<>();
 	
+	@OneToMany(mappedBy="id.product")
 	private Set<OrderItems> items = new HashSet<>();
 	
 	public Product() {}
@@ -49,6 +50,14 @@ public class Product implements Serializable {
 		this.id = id;
 		this.name = name;
 		this.price = price;
+	}
+	
+	public List<Request> getRequests() {
+		List<Request> list = new ArrayList<>();
+		for (OrderItems oi: items) {
+			list.add(oi.getRequest());
+		}
+		return list;
 	}
 
 	public Integer getId() {
@@ -81,6 +90,14 @@ public class Product implements Serializable {
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+	
+	public Set<OrderItems> getItems() {
+		return items;
+	}
+
+	public void setItems(Set<OrderItems> items) {
+		this.items = items;
 	}
 	
 	@Override

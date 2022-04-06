@@ -13,6 +13,7 @@ import com.alexandre.mainionic.domain.CardPayment;
 import com.alexandre.mainionic.domain.Category;
 import com.alexandre.mainionic.domain.City;
 import com.alexandre.mainionic.domain.Client;
+import com.alexandre.mainionic.domain.OrderItems;
 import com.alexandre.mainionic.domain.Payment;
 import com.alexandre.mainionic.domain.PaymentWithTicket;
 import com.alexandre.mainionic.domain.Product;
@@ -24,6 +25,7 @@ import com.alexandre.mainionic.repositories.AddressRepository;
 import com.alexandre.mainionic.repositories.CategoryRepository;
 import com.alexandre.mainionic.repositories.CityRepository;
 import com.alexandre.mainionic.repositories.ClientRepository;
+import com.alexandre.mainionic.repositories.OrderItemsRepository;
 import com.alexandre.mainionic.repositories.PaymentRepository;
 import com.alexandre.mainionic.repositories.ProductRepository;
 import com.alexandre.mainionic.repositories.RequestRepository;
@@ -55,6 +57,10 @@ public class DBService {
 	
 	@Autowired
 	private PaymentRepository pyrep;
+	
+	@Autowired
+	private OrderItemsRepository oirep;
+	
 	
 	public void instantiateDB() throws ParseException {
 		
@@ -272,6 +278,19 @@ public class DBService {
 	    
 	    reqrep.saveAll(Arrays.asList(req1, req2));
 	    pyrep.saveAll(Arrays.asList(pg1, pg2));
+	    
+	    OrderItems oi1 = new OrderItems(req1, p1, 0.00, 1, 2000.00 );
+	    OrderItems oi2 = new OrderItems(req1, p3, 0.00, 2, 80.00 );
+	    OrderItems oi3 = new OrderItems(req2, p7, 100.00, 1, 800.00 );
+	    
+	    req1.getItems().addAll(Arrays.asList(oi1, oi2));
+	    req2.getItems().addAll(Arrays.asList(oi3));
+	    
+	    p1.getItems().addAll(Arrays.asList(oi1));
+	    p3.getItems().addAll(Arrays.asList(oi2));
+	    p7.getItems().addAll(Arrays.asList(oi3));
+	    
+	    oirep.saveAll(Arrays.asList(oi1, oi2, oi3));
 	    
 	}
 } 
