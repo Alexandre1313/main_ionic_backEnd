@@ -6,10 +6,13 @@ import java.util.Objects;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class OrderItems implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@JsonIgnore
 	@EmbeddedId
 	private OrderItemsPK id = new OrderItemsPK();
 	
@@ -61,6 +64,7 @@ public class OrderItems implements Serializable {
 		this.price = price;
 	}
 	
+	@JsonIgnore
 	public Request getRequest() {
 		return id.getRequest();
 	}
