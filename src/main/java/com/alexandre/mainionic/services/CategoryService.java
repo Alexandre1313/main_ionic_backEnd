@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.alexandre.mainionic.domain.Category;
+import com.alexandre.mainionic.dto.CategoryDTO;
 import com.alexandre.mainionic.repositories.CategoryRepository;
 import com.alexandre.mainionic.services.exceptions.DataIntegrityException;
 import com.alexandre.mainionic.services.exceptions.ObjectNotFoundException;
@@ -57,5 +58,9 @@ public class CategoryService {
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, 
 				Direction.valueOf(direction), orderBy);
 		return repo.findAll(pageRequest);
+	}
+	
+	public Category fromDTO(CategoryDTO objDTO) {
+		return new Category(objDTO.getId(), objDTO.getName());
 	}
 }
