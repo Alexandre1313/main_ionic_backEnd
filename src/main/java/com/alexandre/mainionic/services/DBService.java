@@ -126,8 +126,11 @@ public class DBService {
 		City c28 = new City(null, "Ilhota", s27);
 		City c29 = new City(null, "Lages", s27);
 		City c30 = new City(null, "Doutor Pedrinho", s27);
+		City c31 = new City(null, "Indaial", s27);
+		City c32 = new City(null, "Gaspar", s27);
+		City c33 = new City(null, "Itajaí", s27);
 		
-		s27.getCities().addAll(Arrays.asList(c30, c29, c28, c1));
+		s27.getCities().addAll(Arrays.asList(c30, c29, c28, c1, c31, c32, c33));
 		s26.getCities().addAll(Arrays.asList(c7));
 		s25.getCities().addAll(Arrays.asList(c23));
 		s24.getCities().addAll(Arrays.asList(c24));
@@ -210,15 +213,43 @@ public class DBService {
 	    Product p10 = new Product(null, "Mouse", 7.25);
 	    Product p11 = new Product(null, "Leite Semi-desnatado", 3.95);
 	    Product p12 = new Product(null, "Canjica", 7.95);
+	    Product p13 = new Product(null, "Aveia em Flocos", 10.95);
+	    Product p14 = new Product(null, "Vela de Ignição", 77.95);
+	    Product p15 = new Product(null, "Correia Dentada", 151.32);
+	    Product p16 = new Product(null, "Bomba de Água", 300.58);
+	    Product p17 = new Product(null, "Bomba de Óleo", 523.96);
+	    Product p18 = new Product(null, "Tampa do Cárter", 452.36);
+	    Product p19 = new Product(null, "Goiaba", 4.99);
+	    Product p20 = new Product(null, "Banana", 2.99);
+	    Product p21 = new Product(null, "Abacate", 1.50);
+	    Product p22 = new Product(null, "Tangerina", 6.97);
+	    Product p23 = new Product(null, "Cocô", 7.99);
+	    Product p24 = new Product(null, "Ford Fusion 2.0", 150000.99);
+	    Product p25 = new Product(null, "Fiat Palia Atractive 1.0", 60326.52);
+	    Product p26 = new Product(null, "Corsa Sedan 1.8", 33635.21);
+	    Product p27 = new Product(null, "Fiat Uno Atractive 1.4", 40563.96);
+	    Product p28 = new Product(null, "Fusca", 20365.96);
+	    Product p29 = new Product(null, "Camisa Couro Masculina", 597.99);
+	    Product p30 = new Product(null, "Camisa Cirrê Masculina", 79.99);
+	    Product p31 = new Product(null, "Jaqueta Couro Masculina", 799.99);
+	    Product p32 = new Product(null, "Coca-Cola 2l", 9.99);
+	    Product p33 = new Product(null, "Cerveja Skol Lata 350ml", 2.49);
+	    Product p34 = new Product(null, "Água Mineral com gáz", 1.97);
+	    Product p35 = new Product(null, "Vinho Tinto de Mesa Suave 1l", 9.99);
+	    Product p36 = new Product(null, "Cerveja Kaiser 350ml", 2.79);
 	    
 	    cat1.getProducts().addAll(Arrays.asList(p1, p4, p10));
+	    cat5.getProducts().addAll(Arrays.asList(p29, p30, p31));
 	    cat38.getProducts().addAll(Arrays.asList(p11));
-	    cat35.getProducts().addAll(Arrays.asList(p2, p3, p12));	
-	    cat19.getProducts().addAll(Arrays.asList(p8));
+	    cat35.getProducts().addAll(Arrays.asList(p2, p3, p12, p13));	
+	    cat19.getProducts().addAll(Arrays.asList(p8, p14, p15, p16, p17, p18));
 	    cat18.getProducts().addAll(Arrays.asList(p7));
 	    cat24.getProducts().addAll(Arrays.asList(p5));
 	    cat37.getProducts().addAll(Arrays.asList(p9));
 	    cat25.getProducts().addAll(Arrays.asList(p6));
+	    cat36.getProducts().addAll(Arrays.asList(p19, p20, p21, p22, p23));
+	    cat16.getProducts().addAll(Arrays.asList(p24, p25, p26, p27, p28));
+	    cat14.getProducts().addAll(Arrays.asList(p32, p33, p34, p35, p36));
 	    
 	    p1.getCategories().addAll(Arrays.asList(cat1));
 	    p2.getCategories().addAll(Arrays.asList(cat35));
@@ -232,6 +263,30 @@ public class DBService {
 	    p10.getCategories().addAll(Arrays.asList(cat1));
 	    p11.getCategories().addAll(Arrays.asList(cat38));
 	    p12.getCategories().addAll(Arrays.asList(cat35));
+	    p13.getCategories().addAll(Arrays.asList(cat35));
+	    p14.getCategories().addAll(Arrays.asList(cat19));
+	    p15.getCategories().addAll(Arrays.asList(cat19));
+	    p16.getCategories().addAll(Arrays.asList(cat19));
+	    p17.getCategories().addAll(Arrays.asList(cat19));
+	    p18.getCategories().addAll(Arrays.asList(cat19));
+	    p19.getCategories().addAll(Arrays.asList(cat36));
+	    p20.getCategories().addAll(Arrays.asList(cat36));
+	    p21.getCategories().addAll(Arrays.asList(cat36));
+	    p22.getCategories().addAll(Arrays.asList(cat36));
+	    p23.getCategories().addAll(Arrays.asList(cat36));
+	    p24.getCategories().addAll(Arrays.asList(cat16));
+	    p25.getCategories().addAll(Arrays.asList(cat16));
+	    p26.getCategories().addAll(Arrays.asList(cat16));
+	    p27.getCategories().addAll(Arrays.asList(cat16));
+	    p28.getCategories().addAll(Arrays.asList(cat16));
+	    p29.getCategories().addAll(Arrays.asList(cat5));
+	    p30.getCategories().addAll(Arrays.asList(cat5));
+	    p31.getCategories().addAll(Arrays.asList(cat5));
+	    p32.getCategories().addAll(Arrays.asList(cat14));
+	    p33.getCategories().addAll(Arrays.asList(cat14));
+	    p34.getCategories().addAll(Arrays.asList(cat14));
+	    p35.getCategories().addAll(Arrays.asList(cat14));
+	    p36.getCategories().addAll(Arrays.asList(cat14));
 	    
 	    crep.saveAll(Arrays.asList(cat1, cat18, cat19, cat24,
 	    		cat25, cat35, cat37, cat38, cat2, cat3, cat4, cat5, cat6, 
@@ -240,7 +295,9 @@ public class DBService {
 	    		cat30, cat31, cat32, cat33, cat34, cat36));
 	    
 	    prep.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6,
-	    		p7, p8, p9, p10, p11, p12));
+	    		p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, 
+	    		p17, p18, p19, p20, p21, p22, p23, p24, p25, 
+	    		p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36));
 	    
 	    srep.saveAll(Arrays.asList(s1, s2, s3, s4, s5, s6, s7, s8, s9, 
 	    		s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, 
@@ -248,10 +305,12 @@ public class DBService {
 	    
 	    cyrep.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8, c9, 
 	    		c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, 
-	    		c22, c23, c24, c25, c26, c27, c28, c29, c30));
+	    		c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33));
+	    
+	    //Client Instance
 	    
 	    Client cli1 = new Client(null, "Alexandre Cordeiro", 
-	    		"alexandre.13a@gmail.com", "000.612.689.84", ClientType.PESSOAFISICA);
+	    		"alexandre.13a@gmail.com", "68404337497", ClientType.PESSOAFISICA);
 	    cli1.getPhones().addAll(Arrays.asList("(47)99728-5083", "(49)3323-5083"));
 	    
 	    Address ad1 = new Address(null, "Rua Macaé", "43", "Apto 4", "Fortaleza", 
@@ -262,12 +321,51 @@ public class DBService {
 	    
 	    cli1.getAddresses().addAll(Arrays.asList(ad1, ad2));
 	    
-	    clirep.saveAll(Arrays.asList(cli1));
-	    adrep.saveAll(Arrays.asList(ad1, ad2));
+	    Client cli2 = new Client(null, "Carlos Alberto Soares de Lima", 
+	    		"pedromaresia@gmail.com", "26376246000156", ClientType.PESSOAJURIDICA);
+	    cli1.getPhones().addAll(Arrays.asList("(47)99641-2563", "(49)5536-5412"));
+	    
+	    Address ad3 = new Address(null, "Rua São Paulo", "632", "Casa", "Tribess", 
+	    		"89056-091", cli2, c13);
+	    
+	    Address ad4 = new Address(null, "Rua Vespasiano Lopes de Andrade", "43898", "Apto 401", 
+	    		"Taquaras", "64589-011", cli2, c9);
+	    
+	    cli2.getAddresses().addAll(Arrays.asList(ad3, ad4));
+	    
+	    Client cli3 = new Client(null, "Maria das Dores Freitas de Souza", 
+	    		"mariddfs@gmail.com", "74105672000106", ClientType.PESSOAJURIDICA);
+	    cli3.getPhones().addAll(Arrays.asList("(47)99764-5926", "(88)5586-5874", 
+	    		"(47)99728-5083", "(61)9965-8951"));
+	    
+	    Address ad5 = new Address(null, "Rua Tiguá", "6327", "Apto 301", "Ortolândia", 
+	    		"46056-091", cli3, c33);
+	    
+	    Address ad6 = new Address(null, "Rua Inácio Francisco Beltrão", "5234", "Apto 902", 
+	    		"Catanduvas", "45986-874", cli3, c7);
+	    
+	    Address ad7 = new Address(null, "Rua Maritacá", "89654", "Sobrado 1", 
+	    		"Vila das Marianas", "45896-541", cli3, c4);
+	    
+	    Address ad8 = new Address(null, "Rua Araucária", "100", "Apto 785", 
+	    		"Vila Grande", "85965-458", cli3, c23);
+	    
+	    Address ad9 = new Address(null, "Rua Rua Aristides Conselheiro Mafra", "48", "Apto 532", 
+	    		"Mangabi", "34569-521", cli3, c17);
+	    
+	    cli3.getAddresses().addAll(Arrays.asList(ad5, ad6, ad7, ad8, ad9));
+	    
+	    
+	    
+	    
+	    clirep.saveAll(Arrays.asList(cli1, cli2, cli3));
+	    adrep.saveAll(Arrays.asList(ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8, ad9));
+	    
+	    //Order Items
 	    
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	    
-	    Request req1 = new Request(null, sdf.parse("30/09/2017 10:32"), cli1, ad1);
+	    Request req1 = new Request(null, sdf.parse("30/09/2017 10:32"), cli3, ad9);
 	    Request req2 = new Request(null, sdf.parse("10/10/2017 19:35"), cli1, ad2);
 	    
 	    Payment pg1 = new CardPayment(null, PaymentStatus.QUITADO, req1, 7);
@@ -277,7 +375,8 @@ public class DBService {
 	    		sdf.parse("20/10/2017 00:00"), null);
 	    req2.setPayment(pg2);
 	    
-	    cli1.getRequests().addAll(Arrays.asList(req1, req2));
+	    cli1.getRequests().addAll(Arrays.asList(req2));
+	    cli3.getRequests().addAll(Arrays.asList(req1));
 	    
 	    reqrep.saveAll(Arrays.asList(req1, req2));
 	    pyrep.saveAll(Arrays.asList(pg1, pg2));
