@@ -53,6 +53,14 @@ public class Request implements Serializable {
 		this.client = client;
 		this.deliveryAddress = deliveryAddress;
 	}
+	
+	public Double getAmount() {
+		Double sum = 0.0;
+		for(OrderItems oi: items) {
+			sum = sum + oi.getTotalSub();
+		}
+		return sum;
+	}
 
 	public Integer getId() {
 		return id;

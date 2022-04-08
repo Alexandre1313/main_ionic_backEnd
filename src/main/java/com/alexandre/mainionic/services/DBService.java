@@ -381,9 +381,9 @@ public class DBService {
 	    reqrep.saveAll(Arrays.asList(req1, req2));
 	    pyrep.saveAll(Arrays.asList(pg1, pg2));
 	    
-	    OrderItems oi1 = new OrderItems(req1, p1, 0.00, 1, 2000.00 );
-	    OrderItems oi2 = new OrderItems(req1, p3, 0.00, 2, 80.00 );
-	    OrderItems oi3 = new OrderItems(req2, p7, 100.00, 1, 800.00 );
+	    OrderItems oi1 = new OrderItems(req1, p1, 0.00, 1, p1.getPrice() );
+	    OrderItems oi2 = new OrderItems(req1, p3, 0.00, 2, p3.getPrice() );
+	    OrderItems oi3 = new OrderItems(req2, p7, 100.00, 1, p7.getPrice() );
 	    
 	    req1.getItems().addAll(Arrays.asList(oi1, oi2));
 	    req2.getItems().addAll(Arrays.asList(oi3));
