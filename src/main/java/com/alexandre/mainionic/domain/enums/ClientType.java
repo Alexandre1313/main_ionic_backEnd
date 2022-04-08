@@ -2,8 +2,7 @@ package com.alexandre.mainionic.domain.enums;
 
 public enum ClientType {
 	
-	PESSOAFISICA(1, "Pessoa física"),
-	PESSOAJURIDICA(2, "Pessoa Jurídica");
+	PESSOAFISICA(1, "Pessoa física"), PESSOAJURIDICA(2, "Pessoa Jurídica");
 	
 	private Integer code;
 	private String description;

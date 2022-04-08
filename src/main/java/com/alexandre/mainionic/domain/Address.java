@@ -60,7 +60,7 @@ public class Address implements Serializable {
 		this.client = client;
 		this.setCity(city);
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -124,7 +124,7 @@ public class Address implements Serializable {
 	public void setCity(City city) {
 		this.city = city;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

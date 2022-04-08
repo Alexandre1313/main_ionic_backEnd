@@ -20,7 +20,7 @@ public class Category implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(length=50)
+	@Column(length=80)
 	private String name;
 	
 	@ManyToMany(mappedBy="categories")

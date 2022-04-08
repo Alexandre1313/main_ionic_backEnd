@@ -8,18 +8,20 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import com.alexandre.mainionic.domain.Client;
+import com.alexandre.mainionic.services.validation.ClientUpdate;
 
+@ClientUpdate
 public class ClientDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	
-	@NotEmpty(message="Preenchimento obrigatório!")
+	@NotEmpty(message="Preenchimento do campo nome é obrigatório!")
 	@Length(min=2, max=120, message="O tamanho do nome do cliente deve"
 			+ " ter entre 2 e 120 caracteres!")
 	private String name;
 	
-	@NotEmpty(message="Preenchimento obrigatório!")
+	@NotEmpty(message="Preenchimento do campo e-mail é obrigatório!")
 	@Email(message="Email inválido!")
 	private String email;
 

@@ -25,7 +25,7 @@ public class CategoryService {
 	public Category find(Integer id) {
 		Optional<Category> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-				"Objeto de ID " + id + " não encontrado" + ", tipo: " + 
+				"Categoria de ID " + id + " não encontrada" + ", tipo: " + 
 		Category.class.getName()));
 	}
 
@@ -35,8 +35,9 @@ public class CategoryService {
 	}
 
 	public Category update(Category obj) {
-		find(obj.getId());
-		return repo.save(obj);
+		Category newObj = find(obj.getId());
+		updateData(newObj, obj);
+		return repo.save(newObj);
 	}
 
 	public void delete(Integer id) {
@@ -62,5 +63,9 @@ public class CategoryService {
 	
 	public Category fromDTO(CategoryDTO objDTO) {
 		return new Category(objDTO.getId(), objDTO.getName());
+	}
+	
+	private void updateData(Category newObj, Category obj) {
+		newObj.setName(obj.getName());
 	}
 }

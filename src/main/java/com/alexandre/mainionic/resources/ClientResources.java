@@ -1,5 +1,6 @@
 package com.alexandre.mainionic.resources;
 
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.alexandre.mainionic.domain.Client;
 import com.alexandre.mainionic.dto.ClientDTO;
+import com.alexandre.mainionic.dto.ClientNewDTO;
 import com.alexandre.mainionic.services.ClientService;
 
 @RestController
@@ -50,6 +53,16 @@ public class ClientResources {
 		Page<Client> list = service.findPage(page, linesPerPage, orderBy, direction);
 		Page<ClientDTO> listDTO = list.map(o -> new ClientDTO(o));
 		return ResponseEntity.ok().body(listDTO);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST)
+	public ResponseEntity<Void> create(@Valid @RequestBody ClientNewDTO objDTO) {
+		Client obj = service.fromDTO(objDTO);
+		obj = service.create(obj);
+		URI uri = ServletUriComponentsBuilder.
+				fromCurrentRequest().path("/{id}").
+				buildAndExpand(obj.getId()).toUri();
+		return ResponseEntity.created(uri).build();
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
