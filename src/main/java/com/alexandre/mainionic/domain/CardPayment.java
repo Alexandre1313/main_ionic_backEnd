@@ -3,8 +3,10 @@ package com.alexandre.mainionic.domain;
 import javax.persistence.Entity;
 
 import com.alexandre.mainionic.domain.enums.PaymentStatus;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 @Entity
+@JsonTypeName("pagamentoComCartao")
 public class CardPayment extends Payment{
 	private static final long serialVersionUID = 1L;
 	
