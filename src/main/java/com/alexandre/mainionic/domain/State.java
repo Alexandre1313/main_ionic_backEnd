@@ -22,10 +22,10 @@ public class State implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(length=40)
+	@Column(length=40, unique=true)
 	private String name;
 	
-	@Column(length=2)
+	@Column(length=2, unique=true)
 	private String acronym;
 	
 	@JsonIgnore

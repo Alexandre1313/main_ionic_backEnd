@@ -10,3 +10,4 @@ public class MainIonicApplication {
 		SpringApplication.run(MainIonicApplication.class, args);
 	}
 }
+

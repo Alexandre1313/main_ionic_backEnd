@@ -129,11 +129,62 @@ public class DBService {
 		City c31 = new City(null, "Indaial", s27);
 		City c32 = new City(null, "Gaspar", s27);
 		City c33 = new City(null, "Itajaí", s27);
-		
-		s27.getCities().addAll(Arrays.asList(c30, c29, c28, c1, c31, c32, c33));
-		s26.getCities().addAll(Arrays.asList(c7));
+		City c34 = new City(null, "Belo Horizonte", s1);
+		City c35 = new City(null, "Florianópolis", s27);
+		City c36 = new City(null, "Curitiba", s26);
+		City c37 = new City(null, "Mafra", s27);
+		City c38 = new City(null, "Porto Alegre", s14);
+		City c39 = new City(null, "Vacaria", s14);
+		City c40 = new City(null, "Francisco Beltrão", s26);
+		City c41 = new City(null, "São José dos Pinhais", s26);
+		City c42 = new City(null, "Londrina", s26);
+		City c43 = new City(null, "Pato Branco", s26);
+		City c44 = new City(null, "Toledo", s26);
+		City c45 = new City(null, "Cascavel", s26);
+		City c46 = new City(null, "União da Vitória", s26);
+		City c47 = new City(null, "Maringá", s26);
+		City c48 = new City(null, "Ponta Grossa", s26);
+		City c49 = new City(null, "Guaratuba", s26);
+		City c50 = new City(null, "Paranaguá", s26);
+		City c51 = new City(null, "Rodeio", s27);
+		City c52 = new City(null, "Vidal Ramos", s27);
+		City c53 = new City(null, "Imbuia", s27);
+		City c54 = new City(null, "Uberlândia", s1);
+		City c55 = new City(null, "Santos", s2);
+		City c56 = new City(null, "São José do Rio Preto", s2);
+		City c57 = new City(null, "Limeira", s2);
+		City c58 = new City(null, "Santa Maria", s14);
+		City c59 = new City(null, "Pelotas", s14);
+		City c60 = new City(null, "Gravataí", s14);
+		City c61 = new City(null, "Gramados", s14);
+		City c62 = new City(null, "Guaporé", s14);
+		City c63 = new City(null, "Mucajaí", s24);
+		City c64 = new City(null, "Caracaraí", s24);
+		City c65 = new City(null, "Pacaraima", s24);
+		City c66 = new City(null, "Apiúna", s27);
+		City c67 = new City(null, "Ascurra", s27);
+		City c68 = new City(null, "Ibirama", s27);
+		City c69 = new City(null, "Rio do Sul", s27);
+		City c70 = new City(null, "São Miguel do Oeste", s27);
+		City c71 = new City(null, "Juiz de Fora", s1);
+		City c72 = new City(null, "Contagem", s1);
+		City c73 = new City(null, "Montes Claros", s1);
+		City c74 = new City(null, "Uberaba", s1);
+		City c75 = new City(null, "Ribeirão das Neves", s1);
+		City c76 = new City(null, "Betin", s1);
+		City c77 = new City(null, "Sete Lagoas", s1);
+		City c78 = new City(null, "Governador Valadares", s1);
+		City c79 = new City(null, "Poços de Caldas", s1);
+		City c80 = new City(null, "Patos de Minas", s1);
+		City c81 = new City(null, "Pouso Alegre", s1);
+		City c82 = new City(null, "Pomerode", s27);
+				
+		s27.getCities().addAll(Arrays.asList(c30, c29, c28, c1, c31, c32, c33, c35, c37, 
+				                             c51, c52, c53, c66, c67, c68, c69, c70, c82));
+		s26.getCities().addAll(Arrays.asList(c7, c36, c40, c41, c42, c43, c44, c45, c46, 
+				                            c47, c48, c49, c50));
 		s25.getCities().addAll(Arrays.asList(c23));
-		s24.getCities().addAll(Arrays.asList(c24));
+		s24.getCities().addAll(Arrays.asList(c24, c63, c64, c65));
 		s23.getCities().addAll(Arrays.asList(c8));
 		s22.getCities().addAll(Arrays.asList(c22));
 		s21.getCities().addAll(Arrays.asList(c6));
@@ -143,7 +194,7 @@ public class DBService {
 		s17.getCities().addAll(Arrays.asList(c20));
 		s16.getCities().addAll(Arrays.asList(c19));
 		s15.getCities().addAll(Arrays.asList(c5));
-		s14.getCities().addAll(Arrays.asList(c2));
+		s14.getCities().addAll(Arrays.asList(c2, c38, c39, c58, c59, c60, c61, c62));
 		s13.getCities().addAll(Arrays.asList(c18));
 		s12.getCities().addAll(Arrays.asList(c17));
 		s11.getCities().addAll(Arrays.asList(c16));
@@ -155,8 +206,9 @@ public class DBService {
 		s5.getCities().addAll(Arrays.asList(c10));
 		s4.getCities().addAll(Arrays.asList(c9));
 		s3.getCities().addAll(Arrays.asList(c25));
-		s2.getCities().addAll(Arrays.asList(c4));
-		s1.getCities().addAll(Arrays.asList(c26));
+		s2.getCities().addAll(Arrays.asList(c4, c55, c56, c57));
+		s1.getCities().addAll(Arrays.asList(c26, c34, c54, c71, c72, c73, c74, c75, 
+				                            c76, c77, c78, c79, c80, c81));
 				
 		//Categories
 		
@@ -305,7 +357,12 @@ public class DBService {
 	    
 	    cyrep.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8, c9, 
 	    		c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, 
-	    		c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33));
+	    		c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, 
+	    		c34, c35, c36, c37, c38, c39, c40, c41, c42, c43, c44, c45, 
+	    		c46, c47, c48, c49, c50, c51, c52, c53, c54, c55, c56, c57, 
+	    		c58, c59, c60, c61, c62, c63, c64, c65, c66, c67, c68, c69, 
+	    		c70, c71, c72, c73, c74, c75, c76, c77, c78, c79, c80, c81, 
+	    		c82));
 	    
 	    //Client Instance
 	    
