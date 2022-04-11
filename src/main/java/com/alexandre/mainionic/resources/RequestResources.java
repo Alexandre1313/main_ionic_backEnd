@@ -1,6 +1,8 @@
 package com.alexandre.mainionic.resources;
 
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.alexandre.mainionic.domain.Request;
+
 import com.alexandre.mainionic.services.RequestService;
 
 @RestController
