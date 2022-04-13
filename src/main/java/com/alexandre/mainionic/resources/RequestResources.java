@@ -1,8 +1,6 @@
 package com.alexandre.mainionic.resources;
 
 import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
